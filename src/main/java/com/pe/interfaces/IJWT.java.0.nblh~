@@ -1,0 +1,34 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.pe.interfaces;
+
+/**
+ *
+ * @author dbermudez
+ */
+public interface IJWT {
+
+    /**
+     * Crea un token, para obtener ejecutar getJWT, insertar claim utilizar setClaims
+     * @param id identificador del token
+     * @param issuer autor o creador del toker
+     * @return String del objeto en json.
+     */
+    void createJWT(String id, String issuer, String subject, long ttlMillis);
+
+    boolean validateJWT(String jwt);
+
+    String getApiKey();
+
+    void setApiKey(String apiKey);
+
+    String getJWT();
+
+    void setJWT(Object builder);
+
+    void setClaims(String atri, Object value);
+
+    Object getClaims(Object atri);
+}
